@@ -1,69 +1,49 @@
-# React + TypeScript + Vite
+# 🌍 Travelista Packages
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Travelista Packages** adalah platform web yang menyediakan berbagai paket wisata eksklusif dengan pengalaman perjalanan yang tak terlupakan. Aplikasi ini dibangun menggunakan teknologi modern seperti **React Vite TypeScript**, **TanStack Router**, dan **Tailwind CSS** untuk performa yang cepat, UI responsif, dan manajemen routing yang optimal.
 
-Currently, two official plugins are available:
+## ✨ Fitur Utama
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📦 **Daftar Paket Wisata**  
+  Menampilkan berbagai pilihan paket wisata lengkap dengan deskripsi, harga, durasi, dan aktivitas.
 
-## Expanding the ESLint configuration
+- 🔍 **Detail Paket**  
+  Setiap paket dilengkapi informasi mendetail: tujuan wisata, itinerary, fasilitas, dan galeri gambar.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📱 **Responsive Design**  
+  Tampilan elegan dan optimal di semua perangkat (mobile, tablet, desktop).
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ⚡ **Navigasi Cepat & Dinamis**  
+  Berkat TanStack Router, navigasi antar halaman menjadi cepat tanpa reload.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- 🎨 **UI Modern & Ringan**  
+  Menggunakan Tailwind CSS untuk styling yang konsisten, ringan, dan bisa disesuaikan dengan mudah.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 🗂️ **Struktur Proyek Modular**  
+  Menggunakan Vite + TypeScript untuk kemudahan pengembangan dan scalability jangka panjang.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Teknologi yang Digunakan
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Teknologi | Keterangan |
+|----------|------------|
+| [React](https://reactjs.org/) | Library JavaScript modern untuk membangun UI |
+| [Vite](https://vitejs.dev/) | Build tool super cepat untuk React + TS |
+| [TypeScript](https://www.typescriptlang.org/) | Superset JavaScript yang kuat dan terstruktur |
+| [TanStack Router](https://tanstack.com/router) | Router canggih untuk navigasi dinamis |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS framework untuk styling cepat |
+
+---
+
+## 🚀 Kelebihan Teknologi yang Digunakan
+
+- ✅ **React + Vite** → Startup aplikasi sangat cepat, HMR (Hot Module Replacement) instan.
+- ✅ **TanStack Router** → Routing deklaratif, nested layout, dan data loader built-in yang powerful.
+- ✅ **Tailwind CSS** → Membuat UI cepat dan mudah tanpa banyak custom CSS.
+- ✅ **TypeScript** → Mengurangi bug sejak awal dengan type-checking dan IntelliSense support.
+
+
+![Gambar WhatsApp 2025-07-12 pukul 15 47 13_7650b8c1](https://github.com/user-attachments/assets/1a76ca8a-effe-4d03-915b-e936a4202de8)
+![Gambar WhatsApp 2025-07-12 pukul 15 46 37_1fdfdcb4](https://github.com/user-attachments/assets/61a90577-7f21-42a6-baa5-edffd38d672d)
+
