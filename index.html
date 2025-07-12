@@ -2,14 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="/travel/public/logo1.png" href="/logo1.png" />
-    <link href="/src/index.css" rel="stylesheet" />
+
+    <!-- Gunakan favicon dari public folder -->
+    <link rel="icon" href="/logo1.png" type="image/png" />
+
+    <!-- Jangan gunakan /src/... untuk style. Ini otomatis di-handle oleh Vite -->
+    <!-- Jika kamu sudah import index.css di main.tsx, baris ini bisa dihapus -->
+    <!-- <link href="/src/index.css" rel="stylesheet" /> -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ds Travel</title>
+    <title>Travelista Packages</title>
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Script utama React Vite -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
