@@ -499,12 +499,14 @@ function RouteComponent() {
 
 // Wrapper for ServicesPage with animation
 const ServicesPageWithAnimation: React.FC = () => {
-  const [ref, inView] = useInView({ threshold: 0.1, rootMargin: '-100px 0px' });
+  // Specify HTMLDivElement as the generic type for useInView
+  const [ref, inView] = useInView<HTMLDivElement>({ threshold: 0.1, rootMargin: '-100px 0px' });
   return (
     <div
-      ref={ref}
+      // Apply the explicit cast here
+      ref={ref as React.Ref<HTMLDivElement>}
       className={`transition-all duration-1000 ease-out
-                          ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
+                           ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
     >
       <ServicesPage />
     </div>

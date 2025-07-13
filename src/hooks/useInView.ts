@@ -3,8 +3,9 @@ import { useRef, useEffect, useState } from 'react';
 
 interface UseInViewOptions extends IntersectionObserverInit {}
 
-const useInView = (options?: UseInViewOptions) => {
-  const ref = useRef<HTMLElement>(null);
+// Add a generic type parameter `T` that extends HTMLElement
+const useInView = <T extends HTMLElement>(options?: UseInViewOptions) => {
+  const ref = useRef<T>(null); // Use the generic type here
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
