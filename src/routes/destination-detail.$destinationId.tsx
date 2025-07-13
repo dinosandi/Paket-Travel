@@ -1,6 +1,5 @@
 // src/routes/destination-detail.$destinationId.tsx
 import { createFileRoute, notFound, Link } from '@tanstack/react-router';
-import React from 'react';
 import Footer from '../components/Footer'; // Asumsi Anda punya komponen Footer
 
 // Import gambar destinasi

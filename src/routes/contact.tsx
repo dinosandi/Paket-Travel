@@ -106,7 +106,7 @@ function ContactPage() {
                 value={formData.name}
                 onChange={handleChange}
                 className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                placeholder="John Doe"
+                placeholder="Dino"
                 required
               />
             </div>
@@ -119,7 +119,7 @@ function ContactPage() {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                placeholder="john.doe@example.com"
+                placeholder="dino.din@example.com"
                 required
               />
             </div>

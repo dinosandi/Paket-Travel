@@ -1,6 +1,6 @@
 // src/routes/home.tsx
 import { createFileRoute, Link } from '@tanstack/react-router';
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useInView from '../hooks/useInView';
 
 // Import assets
@@ -30,7 +30,6 @@ import aboutUsImg3 from '../assets/bg2.jpg';
 import aboutUsImg4 from '../assets/bg.jpg';
 import aboutUsImg5 from '../assets/komodo.jpg';
 import aboutUsImg6 from '../assets/toba.jpg';
-
 // Komponen DockNavbar
 const DockNavbar: React.FC = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -52,15 +51,11 @@ const DockNavbar: React.FC = () => {
   }, [lastScrollY]);
 
   const navItems = [
-    // Corrected hrefs for single-page navigation 👇
     { href: '/home#home', label: 'Home', icon: (<svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1H11m-9 0h-1a1 1 0 01-1-1v-4a1 1 0 011-1h1m-2 0h16'></path></svg>) },
     { href: '/home#about-us', label: 'About Us', icon: (<svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'></path></svg>) },
-    // For 'Tours', since you have a separate route `/tours`, keep it as is if it navigates to a different page.
-    // If you want a 'Tours' section on the homepage, give it an ID like `id="tours-section"` and use '/home#tours-section'.
     { href: '/tours', label: 'Tours', icon: (<svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1H11m-9 0h-1a1 1 0 01-1-1v-4a1 1 0 011-1h1m-2 0h16'></path></svg>) },
     { href: '/home#services', label: 'Services', icon: (<svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37.522.316 1.15.492 1.724 1.066zM15 12a3 3 0 11-6 0 3 3 0 016 0z'></path></svg>) },
-    { href: '/home#video-showcase', label: 'Videos', icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.724v6.552a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>) },
-    // For 'Contact Us', if it's a separate route, keep it as is. If it's a section on the homepage, update its ID.
+    { href: '/home#video-showcase', label: 'Videos', icon: (<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.724v6.552a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 1 0 00-2 2v8a2 2 0 002 2z"></path></svg>) },
     { href: '/contact', label: 'Contact Us', icon: (<svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'></path></svg>) },
   ];
 
@@ -123,13 +118,12 @@ const DockNavbar: React.FC = () => {
 const HomeDestinationsPreview: React.FC = () => {
   const [ref, inView] = useInView({ threshold: 0.1, rootMargin: '-50px 0px' });
 
-  // Dummy data for top 3 destinations to display as a preview on home page
   const topDestinations = [
     { id: 'borobudur-temple', name: 'Borobudur Temple', image: aboutUsImg1 },
     { id: 'mount-bromo', name: 'Bromo', image: aboutUsImg3 },
     { id: 'raja-ampat', name: 'Raja Ampat', image: aboutUsImg2 },
     { id: 'ubud-bali', name: 'Ubud, Bali', image: aboutUsImg4 },
-    { id: 'komodo-island', name: 'Komodo, island', image:  aboutUsImg5},
+    { id: 'komodo-island', name: 'Komodo, island', image: aboutUsImg5 },
     { id: 'lake-toba', name: 'Lake Toba', image: aboutUsImg6 },
   ];
 
@@ -146,7 +140,11 @@ const HomeDestinationsPreview: React.FC = () => {
           {topDestinations.map((dest) => (
             <Link
               key={dest.id}
-              to={`/destination-detail/${dest.id}`}
+              // =====================================================================
+              // KEMBALIKAN KE PENGGUNAAN STRING PATH DAN PARAMS PROP:
+              to="/destination-detail/$destinationId" // Use the full string path
+              params={{ destinationId: dest.id }} // Pass parameters as an object
+              // =====================================================================
               className="block relative overflow-hidden rounded-lg shadow-md group cursor-pointer hover:shadow-xl transition-all duration-300"
             >
               <img
@@ -176,7 +174,7 @@ const HomeDestinationsPreview: React.FC = () => {
 
 // Komponen About Us Section
 const AboutUsSection: React.FC = () => {
-  const [ref, inView] = useInView({ threshold: 0.1, rootMargin: '-50px 0px' }); // Animasi untuk section ini
+  const [ref, inView] = useInView({ threshold: 0.1, rootMargin: '-50px 0px' });
 
   const images = [
     { src: aboutUsImg1, alt: 'Adventure 1', className: 'absolute top-0 left-0 w-2/3 h-2/3 object-cover rounded-lg shadow-xl -rotate-6 transform hover:rotate-0 hover:scale-105 transition-transform duration-300' },
@@ -188,14 +186,14 @@ const AboutUsSection: React.FC = () => {
   return (
     <section
       id="about-us"
-      ref={ref} // Attach ref here
+      ref={ref}
       className={`py-20 px-6 md:px-12 bg-gray-50 text-gray-800 transition-all duration-1000 ease-out
-                         ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
+                          ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left Side: Images */}
         <div className={`relative h-96 sm:h-[500px] w-full
-                                 ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} transition-all duration-1000 ease-out delay-100`}>
+                               ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'} transition-all duration-1000 ease-out delay-100`}>
           {images.map((img, index) => (
             <img key={index} src={img.src} alt={img.alt} className={img.className} />
           ))}
@@ -247,13 +245,12 @@ const PartnerLogos: React.FC = () => {
   return (
     <section
       className={`py-12 bg-white transition-all duration-1000 ease-out
-                         ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                          ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       ref={ref}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
           {logos.map((logo, index) => (
-            // PERBAIKAN: className menggunakan kurung kurawal untuk template string
             (<img key={index} src={logo} alt={`Partner Logo ${index + 1}`} className={`h-12 w-auto object-contain`} />)
           ))}
         </div>
@@ -270,7 +267,7 @@ interface VideoShowcaseProps {
 const VideoShowcase: React.FC<VideoShowcaseProps> = ({ videoSrc }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [sectionRef, inView] = useInView({ threshold: 0.1, rootMargin: '-100px 0px' }); // Animasi untuk section ini
+  const [sectionRef, inView] = useInView({ threshold: 0.1, rootMargin: '-100px 0px' });
 
   const openModalAndPlay = () => {
     setIsModalOpen(true);
@@ -350,9 +347,9 @@ const VideoShowcase: React.FC<VideoShowcaseProps> = ({ videoSrc }) => {
       {/* Background Video Showcase Section */}
       <section
         id="video-showcase"
-        ref={sectionRef} // Attach ref here for animation
+        ref={sectionRef}
         className={`relative py-20 px-6 md:px-12 flex items-center justify-center min-h-[500px] overflow-hidden cursor-pointer
-                           transition-all duration-1000 ease-out ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                            transition-all duration-1000 ease-out ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         onClick={openModalAndPlay}
       >
         {/* Background Video Element - Muted and Looping */}
@@ -400,10 +397,6 @@ const VideoShowcase: React.FC<VideoShowcaseProps> = ({ videoSrc }) => {
     </>
   );
 };
-
-// Define the route for the home page.
-// Changed from '/home' to '/' as indicated in the original prompt (although the code showed /home).
-// If the intention is actually /home, please revert this change.
 export const Route = createFileRoute('/home')({
   component: RouteComponent,
 });
@@ -458,10 +451,6 @@ function RouteComponent() {
               <Link to="/tours" className="px-8 py-3 bg-blue-600 text-white rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 shadow-lg">
                 Find Tour Packages
               </Link>
-              {/* <button className="px-8 py-3 border-2 border-white text-white rounded-full text-lg font-semibold flex items-center space-x-2 hover:bg-white hover:text-blue-600 transition-colors duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v8a1 1 0 001.555.832l6.25-4a1 1 0 000-1.664l-6.25-4z" clipRule="evenodd"></path></svg>
-                <span>Play Demo</span>
-              </button> */}
             </div>
           </div>
 
@@ -515,7 +504,7 @@ const ServicesPageWithAnimation: React.FC = () => {
     <div
       ref={ref}
       className={`transition-all duration-1000 ease-out
-                         ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
+                          ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
     >
       <ServicesPage />
     </div>

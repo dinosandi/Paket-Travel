@@ -1,6 +1,6 @@
 // src/routes/tours.tsx
 import { createFileRoute, Link } from '@tanstack/react-router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Footer from '../components/Footer'; // Asumsi Anda punya komponen Footer
 
 // Import gambar contoh untuk tur

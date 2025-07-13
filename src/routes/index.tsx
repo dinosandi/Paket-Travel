@@ -1,6 +1,6 @@
 // src/routes/index.tsx
 import { createFileRoute, Link } from '@tanstack/react-router';
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import bgVideo from '../assets/laut.mp4';
 import welcomeImage from '../assets/logo1.png';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'

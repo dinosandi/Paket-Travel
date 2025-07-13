@@ -1,5 +1,5 @@
 // src/components/TestimonialSection.tsx
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 // Import gambar latar belakang baru
 import testimonialBg from '../assets/bg.jpg'; // Ganti dengan path gambar Anda yang sesuai
